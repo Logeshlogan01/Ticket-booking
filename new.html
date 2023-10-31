@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>OUR SHOP</title>
+    <meta charset="utf-8">
+    <style>
+        .imgsmall {
+            width: 100px;
+ 
+        }
+ 
+        .hid {}
+    </style>
+    <script>
+        var total, count, rate;
+ 
+        function setcount(t) {
+            if (t == 1)
+                count = document.getElementById("spin").value;
+            else if (t == 2)
+                count = document.getElementById("round").value;
+            else
+                count = document.getElementById("vasanth").value;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+            total = count * rate;
+            document.getElementById("total").innerHTML = total;
+ 
+ 
+        }
+ 
+        function setprice(r) {
+            rate = r;
+            total = count * rate;
+            document.getElementById("total").innerHTML = total;
+ 
+        }
+ 
+        function buy() {
+ 
+            alert("Enjoy your show, Your bill Rs." + total);
+        }
+ 
+        function unhide() {
+            // var ele=document.getElementsByClassName("hid");
+            //for(e in ele )
+            //e.unhide('display');
+            element = document.styleSheets[0].cssRules[0].style;
+            element.removeProperty('display');
+ 
+ 
+        }
+    </script>
+</head>
+ 
+<body style="text-align:center;">
+    <h1>Welcome to Cinemas</h1>
+    <hr>
+    <div id="centerpro">
+        <table>
+            <tr>
+                <th>Film</th>
+                <th>Number of Ticket</th>
+            </tr>
+            <tr>
+                <td>MOVIE 1</td>
+                <td><img class="imgsmall" src="https://imageio.forbes.com/specials-images/imageserve/63ab9396758073fca21d7c6d/0x0.jpg"></td>
+                <td><input type="radio" id="p1" name="product" onclick="unhide()"></td>
+                <td class="hid"><INPUT TYPE="NUMBER" MIN="0" MAX="5" STEP="1" VALUE="0" SIZE="6" id="spin" onclick="setcount(1)"></td>
+                <td class="hid">Class III RS.100</td>
+                <td class="hid"><input type="radio" id="c1" name="class" onclick="setprice(100)"></td>
+                <td class="hid">Class II RS.200</td>
+                <td class="hid"><input type="radio" id="c2" name="class" onclick="setprice(200)"></td>
+                <td class="hid">Class I RS.300</td>
+                <td class="hid"><input type="radio" id="c3" name="class" onclick="setprice(300)"></td>
+            </tr>
+            <tr>
+                <td>MOVIE 2</td>
+                <td><img class="imgsmall" src="https://pics.filmaffinity.com/Avatar-265462659-large.jpg"></td>
+                <td><input type="radio" id="p2" name="product"></td>
+                <td><INPUT TYPE="NUMBER" MIN="0" MAX="5" STEP="1" VALUE="0" SIZE="6" id="round" onclick="setcount(2)"></td>
+                <td>Class III RS.100</td>
+                <td><input type="radio" id="c1" name="class" onclick="setprice(100)"></td>
+                <td>Class II RS.200</td>
+                <td><input type="radio" id="c2" name="class" onclick="setprice(200)"></td>
+                <td>Class I RS.300</td>
+                <td><input type="radio" id="c3" name="class" onclick="setprice(300)"></td>
+            </tr>
+            <tr>
+                <td> MOVIE 3</td>
+                <td><img class="imgsmall" src="https://cdna.artstation.com/p/assets/images/images/057/269/876/large/sugat-avasarmal-avatar-2-poster-designfull-sie.jpg"></td>
+                <td><input type="radio" id="p3" name="product"></td>
+                <td><INPUT TYPE="NUMBER" MIN="0" MAX="5" STEP="1" VALUE="0" SIZE="6" id="vasanth" onclick="setcount(3)"></td>
+                <td>Class III RS.100</td>
+                <td><input type="radio" id="c1" name="class" onclick="setprice(100)"></td>
+                <td>Class II RS.200</td>
+                <td><input type="radio" id="c2" name="class" onclick="setprice(200)"></td>
+                <td>Class I RS.300</td>
+                <td><input type="radio" id="c3" name="class" onclick="setprice(300)"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="button"  value=""  onclick="buy()">BUY</button></td>
+            </tr>
+        </table>
+    </div>
+    <div id="total"></div>
+    <div id="results2"></div>
+    <script>
+        function unhide() {
+            element = document.styleSheets[0].cssRules[0].style;
+            element.removeProperty('display');
+ 
+ 
+        }
+    </script>
+</body>
+ 
+</html>
